@@ -1,0 +1,53 @@
+{
+  "name": "dsh-yt-downloader",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "视频下载器 —— 侧边栏常驻面板：粘任意视频链接（YouTube / B站 / X / 直链等），选画质（144p–4K）下载，或只抽音频，进度实时可见。",
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "youtube",
+    "yt-dlp",
+    "downloader"
+  ],
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "scripts/",
+    "README.md"
+  ],
+  "scripts": {
+    "setup": "node scripts/setup-ytdlp.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "react": "^18.3.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [],
+      "external": ["react"],
+      "immediately": true
+    }
+  },
+  "license": "MIT"
+}

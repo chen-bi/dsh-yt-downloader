@@ -1,0 +1,10 @@
+# 依赖 / 运行产物
+node_modules/
+vendor/
+*.log
+
+# 本地环境
+.env
+.env.*
+.DS_Store
+Thumbs.db

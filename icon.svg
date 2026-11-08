@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Video Downloader">
+  <defs>
+    <linearGradient id="vd-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5b7cfa"/>
+      <stop offset="1" stop-color="#2b46d9"/>
+    </linearGradient>
+    <linearGradient id="vd-gloss" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.34"/>
+      <stop offset="0.6" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="3" y="8" width="58" height="48" rx="14" fill="url(#vd-bg)"/>
+  <rect x="3" y="8" width="58" height="48" rx="14" fill="url(#vd-gloss)"/>
+
+  <!-- 播放三角 -->
+  <path d="M23.5 20.5v17.4l14.6-8.7z" fill="#ffffff" opacity="0.96"/>
+
+  <!-- 向下箭头（下载） -->
+  <g stroke="#ffffff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95">
+    <path d="M45.5 22v12"/>
+    <path d="m40.6 29.2 4.9 4.9 4.9-4.9"/>
+  </g>
+
+  <!-- 底部托盘 -->
+  <g stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" fill="none" opacity="0.55">
+    <path d="M22 46h20"/>
+  </g>
+
+  <rect x="3" y="8" width="58" height="48" rx="14" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="1.2"/>
+</svg>
