@@ -1,4 +1,8 @@
+<p align="center"><img src="assets/banner.svg" alt="dsh-yt-downloader · 视频下载器" width="100%"></p>
+
 # dsh-yt-downloader · 视频下载器
+
+> 介绍页：<https://chen-bi.github.io/dsh-yt-downloader/>
 
 侧边栏常驻的下载面板：**粘一条链接 → 选画质（144p–4K）→ 下载视频，或只抽音频。**
 

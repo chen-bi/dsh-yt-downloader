@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-label="dsh-yt-downloader · 视频下载器">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080c12"/>
+      <stop offset="0.5" stop-color="#0d141d"/>
+      <stop offset="1" stop-color="#0a1119"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.75" cy="0.4" r="0.5">
+      <stop offset="0" stop-color="#4fd1c5" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#4fd1c5" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4fd1c5"/>
+      <stop offset="1" stop-color="#2f8f87"/>
+    </linearGradient>
+    <linearGradient id="play" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7ee8dd"/>
+      <stop offset="1" stop-color="#2c8d84"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="420" fill="url(#bg)"/>
+  <rect width="1200" height="420" fill="url(#glow)"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.05">
+    <path d="M0 60 H1200 M0 120 H1200 M0 180 H1200 M0 240 H1200 M0 300 H1200 M0 360 H1200"/>
+  </g>
+
+  <!-- 播放按钮 -->
+  <g transform="translate(930 150)">
+    <circle r="78" fill="none" stroke="url(#play)" stroke-width="2" opacity="0.5"/>
+    <circle r="58" fill="url(#play)" opacity="0.92"/>
+    <path d="M-16 -26 L30 0 L-16 26 Z" fill="#08110f"/>
+  </g>
+
+  <!-- 下载箭头 -->
+  <g transform="translate(1010 300)" stroke="url(#play)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 -46 V18"/>
+    <path d="M-28 -8 L0 20 L28 -8"/>
+    <path d="M-46 46 H46" stroke-opacity="0.7"/>
+  </g>
+
+  <text x="80" y="150" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" fill="#4fd1c5" letter-spacing="10">DSH PLUGIN</text>
+  <text x="76" y="232" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="72" font-weight="700" fill="#eaf7f5">视频下载器</text>
+  <text x="80" y="278" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" fill="#86a9b3" letter-spacing="1.5">yt-dlp · 1000+ 站点 · 144p–4K · 仅音频</text>
+
+  <!-- 进度条 -->
+  <g transform="translate(80 316)">
+    <rect width="520" height="10" rx="5" fill="#16232c"/>
+    <rect width="332" height="10" rx="5" fill="url(#bar)"/>
+    <circle cx="332" cy="5" r="9" fill="#eaf7f5" opacity="0.9"/>
+  </g>
+  <text x="80" y="360" font-family="Consolas, monospace" font-size="17" fill="#6f8d97">64%  ·  12.4 MiB/s  ·  00:41 left  ·  merged with ffmpeg</text>
+</svg>

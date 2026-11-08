@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dsh-yt-downloader · 视频下载器</title>
+<meta name="description" content="DSH 视频下载器：粘链接、选画质（144p–4K）下载或抽音频，背后是 yt-dlp，支持 1000+ 站点。">
+<style>
+  :root {
+    --bg: #080c12; --panel: #0e161f; --line: #1b2a36;
+    --text: #e8f4f2; --muted: #86a9b3; --teal: #4fd1c5; --teal-dim: #2f8f87;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: radial-gradient(900px 520px at 80% -10%, #10303a 0%, var(--bg) 62%);
+    color: var(--text); font: 16px/1.75 "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 72px 22px 96px; }
+  .kicker { color: var(--teal); letter-spacing: .38em; font-size: 12px; text-transform: uppercase; }
+  h1 { font-size: clamp(40px, 7vw, 64px); margin: 10px 0 6px; }
+  .sub { color: var(--muted); font-size: 18px; margin: 0 0 26px; }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 42px; }
+  .btn {
+    display: inline-block; padding: 10px 18px; border-radius: 999px; text-decoration: none;
+    border: 1px solid var(--line); color: var(--text); background: var(--panel); font-size: 14px;
+  }
+  .btn.primary { background: linear-gradient(135deg, #15434a, #0c2026); border-color: #2b6f74; }
+  .btn:hover { border-color: var(--teal); }
+  .bar { height: 8px; border-radius: 5px; background: #16232c; overflow: hidden; margin: 0 0 10px; }
+  .bar span { display: block; height: 100%; width: 64%; border-radius: 5px; background: linear-gradient(90deg, var(--teal), var(--teal-dim)); }
+  .meta { color: #6f8d97; font-family: Consolas, monospace; font-size: 13.5px; margin: 0 0 40px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; }
+  .card h3 { margin: 0 0 8px; font-size: 17px; color: #9fe6dd; font-weight: 600; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  h2 { font-size: 22px; margin: 44px 0 12px; }
+  h2::before { content: "▶ "; color: var(--teal); }
+  p, li { color: #c6dbe1; }
+  code, pre { font-family: "Cascadia Code", Consolas, monospace; }
+  code { background: #0f1a22; border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; font-size: 13.5px; }
+  pre { background: #0a1218; border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; overflow: auto; }
+  pre code { background: none; border: 0; padding: 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 0; font-size: 15px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+  th { color: #b6e5e2; font-weight: 600; }
+  footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--line); color: #5b7680; font-size: 13px; }
+  a { color: #9fe6dd; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="kicker">DeepSeek Harness Plugin</p>
+  <h1>视频下载器</h1>
+  <p class="sub">侧边栏常驻的下载面板：粘一条链接 → 选画质（144p–4K）→ 下载视频，或只抽音频。</p>
+
+  <div class="bar"><span></span></div>
+  <p class="meta">yt-dlp · YouTube / B站 / X / TikTok / 微博 / Vimeo / 直链 …</p>
+
+  <p class="links">
+    <a class="btn primary" href="https://github.com/chen-bi/dsh-yt-downloader">GitHub 仓库</a>
+    <a class="btn" href="https://github.com/chen-bi/dsh-yt-downloader#安装--卸载">安装说明</a>
+  </p>
+
+  <div class="cards">
+    <div class="card"><h3>1000+ 站点</h3><p>背后是 yt-dlp，视频页、直播回放、直链 .mp4/.mp3/.m3u8 都认。</p></div>
+    <div class="card"><h3>画质任选</h3><p>144p 到 4K，优先 H.264；只有一体格式时直接下；仅音频转 MP3。</p></div>
+    <div class="card"><h3>进度实时</h3><p>速度、剩余时间、合并状态都在队列里，下完可一键打开文件或文件夹。</p></div>
+    <div class="card"><h3>代理友好</h3><p>默认跟随 Windows 系统代理，也能手填；代理没开会直接提示，不闷头超时。</p></div>
+  </div>
+
+  <h2>安装</h2>
+  <pre><code>git clone https://github.com/chen-bi/dsh-yt-downloader.git
+cd dsh-yt-downloader
+node scripts/setup-ytdlp.mjs   # vendor/ 不随仓库走，装一次 yt-dlp</code></pre>
+  <p>然后在 DSH 里 <code>plugin_manager → install_bundle</code> 指向该目录，刷新页面。</p>
+  <p>依赖：Python 3（优先 uv 装的）、ffmpeg（找 <code>~\.pyffmpeg\bin</code> 或 vendor 里的），都不需要全局安装 yt-dlp。</p>
+
+  <h2>接口</h2>
+  <table>
+    <tr><th>方法</th><th>路径</th><th>用途</th></tr>
+    <tr><td>GET</td><td><code>/api/ytdl/state</code></td><td>引擎状态、代理、下载目录、队列</td></tr>
+    <tr><td>POST</td><td><code>/api/ytdl/probe</code></td><td><code>{url}</code> → 标题/封面/画质列表</td></tr>
+    <tr><td>POST</td><td><code>/api/ytdl/download</code></td><td><code>{url, mode, formatId}</code> → 建任务</td></tr>
+    <tr><td>GET</td><td><code>/api/ytdl/jobs</code></td><td>队列与进度</td></tr>
+    <tr><td>POST</td><td><code>/api/ytdl/cancel</code></td><td><code>{id}</code> 取消</td></tr>
+  </table>
+
+  <h2>说明</h2>
+  <ul>
+    <li>只接受 <code>http(s)</code> 链接；本地路径和其他协议一律拒绝。</li>
+    <li>下载任务在内存里，DSH 重启后队列清空（文件还在）。</li>
+    <li>受限内容（付费 / 会员 / DRM）下不了；自己看没问题，二次分发请遵守平台条款。</li>
+  </ul>
+
+  <footer>dsh-yt-downloader · MIT · <a href="https://github.com/chen-bi/dsh-yt-downloader">github.com/chen-bi/dsh-yt-downloader</a></footer>
+</main>
+</body>
+</html>
